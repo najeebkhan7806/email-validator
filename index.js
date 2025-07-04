@@ -1,9 +1,11 @@
 import express from "express";
 import dns from "dns/promises";
 import net from "net";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(cors());
 
 const isValidEmailFormat = (email) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
